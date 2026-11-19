@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio — GTA-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <aside class="controls" id="controls">
+    <h1>VICE COVER<br>STUDIO</h1>
+    <p class="tag">Turn any photo into GTA-style cover art — multi-panel poster, neon-sunset grade,
+      lettered caption. Everything runs offline, in your browser. Your photos never leave the machine.</p>
+
+    <section>
+      <h2>Layout</h2>
+      <div class="row" id="layouts"></div>
+    </section>
+
+    <section>
+      <h2>Grade</h2>
+      <div class="row" id="grades"></div>
+    </section>
+
+    <section>
+      <h2>Photos</h2>
+      <div class="row">
+        <button id="use-samples" type="button" class="opt">Use sample photos</button>
+        <label class="opt upload">Upload photos
+          <input id="upload" type="file" accept="image/*" multiple>
+        </label>
+      </div>
+      <div id="panel-editor"></div>
+      <p class="hint">Click a panel in the preview to pick it, then choose its photo above. Drag a
+        panel's photo to move it inside the frame.</p>
+    </section>
+
+    <section>
+      <h2>Caption</h2>
+      <label>Kicker <input id="kicker" type="text" maxlength="40" value="GRAND THEFT AUTO"></label>
+      <label>Title <input id="title" type="text" maxlength="40" value="VICE CITY"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="40" value="SUNSET HEIST"></label>
+    </section>
+
+    <section>
+      <h2>Size</h2>
+      <div class="row" id="sizes"></div>
+    </section>
+
+    <section>
+      <h2>Export</h2>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <button id="export-all" type="button">Export all 3 sizes</button>
+      <p id="status" role="status"></p>
+    </section>
+  </aside>
+
+  <section class="stage">
+    <canvas id="poster" width="1080" height="1080" aria-label="The cover preview"></canvas>
+    <p class="hint">Click a panel to select it · drag to move its photo</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
